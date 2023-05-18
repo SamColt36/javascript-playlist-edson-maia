@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Sam Colt">
+	<meta name="keywords" content="html, js, Github, w3c">
+	<meta name="description" content="Tutorial JS">
+	<link rel="shortcut icon" href="fav-icon.png" type="image/x-icon">
+	<title>JS W3Schools</title>
+	<link rel="icon" type="png" href="./assets/ico.png">
+	<script src="script.js"></script>
+</head>
+
+<body>
+	<h1>5 * 2 = <span id="demo1"></span></h1>
+	<script>
+		document.getElementById("demo1").innerHTML = 5 * 2;
+	</script>
+	<!--Usar document.write() apaga todo o html existente e so deve ser usado para teste-->
+	<button type="button" onclick="document.write(2 * 5)">Reset html</button>
+	<button type="button" onclick="window.alert('Esse é um alert')">window.alert</button>
+	<button type="button" onclick="alert('Esse é um alert')">alert</button>
+	<button type="button" onclick="console.log(1 + 1)">console.log</button>
+	<!--O método abaixo imprimi o conteúdo da tela atual-->
+	<button type="button" onclick="window.print()">window.print()</button>
+</body>
+
+</html>
