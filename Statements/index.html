@@ -15,7 +15,25 @@
 </head>
 
 <body>
-	
+	<p>O valor resultante da operação é <span id="demo"></span></p>
+	<script>
+		// A palavra reservada 'let' serve para declarar variáveis de bloco
+		let x, y, z, result;
+		x = 5.2;
+		y = 2.8;
+		z = 1;
+		result = x + y + z;
+		document.getElementById("demo").innerHTML = result;
+	</script>
+
+	<p id="demo1">Olá a todos</p>
+	<button type="button" onclick="myFunction()">Click me!</button>
+	<script>
+		function myFunction() {
+			document.getElementById("demo").style.backgroundColor = "red";
+			document.getElementById("demo1").innerHTML = "Overwide";
+		}
+	</script>
 </body>
 
 </html>
