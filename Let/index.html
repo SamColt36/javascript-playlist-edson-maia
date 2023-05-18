@@ -15,7 +15,29 @@
 </head>
 
 <body>
-	
+	<p id="demo"></p>
+	<script>
+		/*
+
+		// Redefinição de valores, exemplo abaixo
+		var a = 1;
+		var a = "SamColt"
+		document.getElementById("demo").innerHTML = a;
+		// Variáveis definidas com 'let' não podem ser redefinidas
+		// É possível redeclarar 'var' em qualquer escopo, local ou global
+		// Variáveis declaradas com 'var' podem ser declaradas em qualquer região do block code
+		carName = "Volvo";
+		var carName; 
+		// O exemplo acima não se aplica a variáveis declaradas com 'let'
+		
+		*/
+		var x = 10;
+		{
+			var x = 1;
+		}
+		document.getElementById("demo").innerHTML = x;
+
+	</script>
 </body>
 
 </html>
