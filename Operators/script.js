@@ -38,5 +38,23 @@ document.write(`c == d = ${c == d} <br>`)
 document.write(`c === d = ${c === d} <br>`)
 document.write(`c >= d = ${c >= d} <br>`)
 document.write(`c <= d = ${c <= d} <br>`)
+document.write("-------- <br>")
+// 00000001 = 1
+// 00000010 = 2
+// 00000011 = 3	==> 1 | 2
+document.write(`1 | 2 <br> ${1 | 2}`)
+/* 
+O operador de bitwise | (Or) verifica da esquerda para a direita, se encontrar ao menos um número 1 ele retorna 1 com valor.
+Dessa forma, 1 | 2 = 3, que em binary é 0000011 = 3
+*/
+// 00000001 = 1
+// 00000010 = 2
+// 00000000 = 0
+document.write(`1 & 2 <br> ${1 & 2}`)
+/* 
+O operador de bitwise & (And) verifica da esquerda para a direita, se encontrar na mesma posição os dois, ou mais, números 1 ele retorna 1 com valor.
+Dessa forma, 1 & 2 = 0, que em binary é 0000000 = 0
+*/
+
 
 
