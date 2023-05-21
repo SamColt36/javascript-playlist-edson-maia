@@ -34,5 +34,9 @@ document.write(`b !== c -> ${b !== c} <br>`)
 document.write("-------- <br>")
 document.write(`a > d = ${a > d} <br>`)
 document.write(`a < d = ${a < d} <br>`)
-document.write(`a >= d = ${a >= d} <br>`)
+document.write(`c == d = ${c == d} <br>`)
+document.write(`c === d = ${c === d} <br>`)
+document.write(`c >= d = ${c >= d} <br>`)
+document.write(`c <= d = ${c <= d} <br>`)
+
 
