@@ -8,4 +8,3 @@ alert(x)
 function function1(var1, var2) {
 	return var1 ** var2;
 }
-document.
