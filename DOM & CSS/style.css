@@ -1,49 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
 * {
-	box-sizing: border-box;
-	padding: 0;
 	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 	font-family: 'Roboto', sans-serif;
 }
 
 body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	width: 100vw;
 	height: 100vh;
+	background: #ccc;
 }
 
-.tela-principal {
-	max-width: 768px;
-
+main {
+	min-width: 960px;
+	min-height: 100vh;
+	margin: 0 auto;
+	background: #fff;
+	padding: 2rem;
 }
 
-.tela-principal>span {
-	margin: 20px 0;
-	display: block;
+section {
+	width: 960px;
+	margin: 0 auto;
 }
 
-.tela-principal>span>button {
-	width: 4rem;
-	height: 2.5rem;
-	border-radius: 25px;
+h1,
+section,
+article {
+	margin-bottom: 1rem;
+}
+
+#botoes {
+	display: inline-block;
+	margin-bottom: 1rem;
+}
+
+/* botoes */
+button {
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	padding: 0.625rem;
 	cursor: pointer;
-	border: 1px solid rgb(216, 216, 216);
 }
 
-#btn-light {
-	background-color: rgb(235, 235, 235);
+/* botao light */
+#btlight {
+	background: #ededed;
+	color: #121212;
 }
 
-#btn-night {
-	background-color: #1f1f1f;
-	color: white;
+/* botao dark */
+#btdark {
+	background-color: #263238;
+	color: #fff;
 }
 
-#conteudos img {
-	height: 50px;
-}
-
+/* articles com a class box */
 .box {
-	margin: 20px 0;
+	padding: 0.625rem;
+	border-radius: 8px;
+}
+
+/* Estilos para serem usados via JS */
+.light {
+	background: #fff;
+	color: #191919;
+}
+
+.dark {
+	background: #222;
+	color: #fff;
+}
+
+.azul {
+	background: #1a237e;
+	color: #fff;
+}
+
+.escura {
+	background: #333;
+	color: #fff;
+	border-radius: 5px;
+	padding: 0.625rem;
+}
+
+.amarelo {
+	background: #ffc107;
+	color: #fff;
 }
