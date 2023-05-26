@@ -1,0 +1,49 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.tela-principal {
+	max-width: 768px;
+
+}
+
+.tela-principal>span {
+	margin: 20px 0;
+	display: block;
+}
+
+.tela-principal>span>button {
+	width: 4rem;
+	height: 2.5rem;
+	border-radius: 25px;
+	cursor: pointer;
+	border: 1px solid rgb(216, 216, 216);
+}
+
+#btn-light {
+	background-color: rgb(235, 235, 235);
+}
+
+#btn-night {
+	background-color: #1f1f1f;
+	color: white;
+}
+
+#conteudos img {
+	height: 50px;
+}
+
+.box {
+	margin: 20px 0;
+}
