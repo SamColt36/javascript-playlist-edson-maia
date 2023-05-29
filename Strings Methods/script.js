@@ -12,7 +12,7 @@ document.write(`<p> alfabeto comprimento = ${alfabetoComprimento} </p>`)
 document.write("<hr>")
 
 //.slice(start, end) corta uma String e cria a partir de pontos de interrupção e cria uma String
-let quatroPrimeirasLetrasSlice = alfabeto.slice(0,4) // quatro primeiras letras
+let quatroPrimeirasLetrasSlice = alfabeto.slice(0, 4) // quatro primeiras letras
 document.write(`<p> Quatro primeiras letras / .slice(0, 4) = ${quatroPrimeirasLetrasSlice} </p>`)
 // Se um parâmetro for negativo, a posição será contada a partir do final da cadeia de caracteres:
 let quatroÚltimasLetrasSlice = alfabeto.slice(-4)
@@ -44,7 +44,7 @@ document.write(`<p> Estraindo último trecho / .substr(-21) = ${trecho} </p>`)
 // Não substituí a String por completo mas somente o termo
 document.write("<hr>")
 let fraseOriginal = "Olá queridos, sejam muito bem vindos a mais um treinamento Windows. O SO mais usado atualmente por usuários comuns em ambientes desktop é o Windows.",
-fraseCorrigida = fraseOriginal.replace("Windows", "Linux")
+	fraseCorrigida = fraseOriginal.replace("Windows", "Linux")
 document.write(`<p> Frase original = ${fraseOriginal} </p>`)
 document.write(`<p> Frase corrigida com  .replace("Windows", "Linux") = ${fraseCorrigida} </p>`)
 // Para ignorar o case sensitive default do .replace usa-se no parâmetro, sem aspas, o sinal /termo/i
@@ -68,6 +68,6 @@ let fraseCompilation = frase.concat(' ', fraseOriginal)
 document.write(`<p> Frase concatenada com .concat() = ${fraseCompilation} </p>`)
 // O método trim() remover espaços em branco entre as extremidades da String
 let fraseComEspaco = "			" + frase + "                                     ",
-fraseComEspacoRemovido = fraseComEspaco.trim()
+	fraseComEspacoRemovido = fraseComEspaco.trim()
 document.write(`<p> Comprimento de Frase com espaçamento = ${fraseComEspaco.length} </p>`)
 document.write(`<p> Comprimento de Frase sem espaçamento = ${fraseComEspacoRemovido.length} </p>`)
