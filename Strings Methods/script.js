@@ -54,14 +54,20 @@ document.write(`<p> Frase corrigida com  .replace(/windows/i, "Linux") = ${frase
 // Para substituir todas as ocorrências usa-se o //g oriundo de 'global'
 fraseCorrigida2 = fraseOriginal.replace(/Windows/g, "Linux")
 document.write(`<p> Frase corrigida com  .replace(/Windows/g, "Linux") = ${fraseCorrigida2} </p>`)
+// .replaceAll() também seleciona todas as ocorrências
+// Esse método não funciona no Internet Explorer
+fraseCorrigida3 = fraseOriginal.replaceAll("Windows", "Linux")
+document.write(`<p> Frase corrigida com  .replaceAll("Windows", "Linux") = ${fraseCorrigida3} </p>`)
+document.write("<hr>")
 
-
-
-// replaceAll
-
-
-
-
-
-
-
+// Converter para maiúscula .toUppercase() e para minúscula .toLowerCase()
+document.write(`<p> Frase em uppercase = ${frase.toUpperCase()} </p>`)
+document.write(`<p> Frase em lowercase = ${frase.toLowerCase()} </p>`)
+// .concat() serve para concatenar duas Strings
+let fraseCompilation = frase.concat(' ', fraseOriginal)
+document.write(`<p> Frase concatenada com .concat() = ${fraseCompilation} </p>`)
+// O método trim() remover espaços em branco entre as extremidades da String
+let fraseComEspaco = "			" + frase + "                                     ",
+fraseComEspacoRemovido = fraseComEspaco.trim()
+document.write(`<p> Comprimento de Frase com espaçamento = ${fraseComEspaco.length} </p>`)
+document.write(`<p> Comprimento de Frase sem espaçamento = ${fraseComEspacoRemovido.length} </p>`)
