@@ -8,3 +8,10 @@ while (cont < flv.length) {
 }
 
 // DO WHILE = faça enquanto
+// Executa a condição so no fim, por isso irá executar ao menos uma vez
+document.write("<hr>")
+cont = 0
+do {
+	document.write(flv[cont] + "<br>")
+	cont++
+} while (cont < flv.length)
