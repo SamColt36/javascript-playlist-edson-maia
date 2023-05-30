@@ -71,3 +71,27 @@ let fraseComEspaco = "			" + frase + "                                     ",
 	fraseComEspacoRemovido = fraseComEspaco.trim()
 document.write(`<p> Comprimento de Frase com espaçamento = ${fraseComEspaco.length} </p>`)
 document.write(`<p> Comprimento de Frase sem espaçamento = ${fraseComEspacoRemovido.length} </p>`)
+// .trimStart() para remover espaços no início da String
+// .trimEnd() para remover espaços no início da String
+
+// O método .padStart(length, String) preenche uma String com outra String, no início, até dado comprimento
+// O método .padEnd(length, String) preenche uma String com outra String, no fim, até dado comprimento
+let index = 5,
+	ondeCode = index,
+	ondeCodeString = ondeCode.toString()
+
+document.write(ondeCodeString.padStart(10, 0) + "<br>")
+document.write(ondeCodeString.padEnd(10, 0) + "<br>" + "<hr>")
+// Para usar o .padStart e .padEnd em number deve-se primeiro converter o número para String usando a propriedade .toString()
+
+// Estraindo caracteres de String
+// .charAt(index) retorna um único caractere de uma String com base em um índice
+document.write(frase.charAt(index) + "<br>")
+// .charCodeAt(index) retorna não o caractere de um dado index mas sim seu code UTF-16
+document.write(frase.charCodeAt(index) + "<br>")
+// Da para acessar um index similarmente como um array usando o colchetes '[]'
+document.write(frase[index] + "<br>" + "<hr>")
+
+// Converter String em array com a propriedade .split()
+let x = "a,b,c,d,e,f,g,h,i,j,k,l,m", xArray = x.split(",")
+document.write(xArray[2])
