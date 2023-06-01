@@ -13,7 +13,7 @@ for (let i in array) {
 // Para percorrer arrays da maneira correta usa-se o .forEach(function(){})
 // Onde a function usada como parâmetro do forEach é uma função anônima
 // FOREACH forEach = para cada
-// A propriedade .forEach(funcion(nomeDoObjeto, index) {block code})
+// A propriedade .forEach(funciton(nomeDoObjeto, index) {block code})
 // Geralmente usa como parâmetro da propriedade .forEach uma função anônima
 let flv = ['Laranja', 'Goiaba', 'Melancia', 'Cenoura', 'Beteraba']
 flv.forEach(function (flv, i) {
