@@ -12,5 +12,5 @@ document.write("<hr>")
 // Caso String
 let array2 = "OlaMundo"
 for (const iterator of array2) {
-	document.write(`<h3> ${iterator} </h3>`)
+	document.write(`<p> ${iterator} </p>`)
 }
