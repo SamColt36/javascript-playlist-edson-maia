@@ -1,6 +1,6 @@
 document.getElementById("demo").style.backgroundColor = "#105846"
 document.getElementById("demo").style.color = "#dddddd"
-// FORIN for in = percorre as propriedades de um objeto ou array. De uma coleção em geral
+// FORIN for in = percorre as propriedades de um objeto ou array. De uma coleção 
 const pessoas = { nome: "John Doe", altura: 1.76, idade: 22, peso: 50.5 }
 for (let i in pessoas) {
 	document.write(pessoas[i] + "<br>")
