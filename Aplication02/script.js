@@ -10,13 +10,11 @@ let nota1 = document.querySelector('#nota1'),
 calc.addEventListener('click', function (e) {
 	let n1 = nota1.value,
 		n2 = nota2.value,
-		med = ((n1 + n2) / 2)
-		media.value = med
-	aviso.textContent = sit(med)
+		med = ((n1 + n2) / 2).toFixed(1)
+		media.value = med,
+		temp = sit(med)
+	situacao.textContent = temp
 
-	console.log(n1)
-	console.log(n2)
-	console.log(med)
 	e.preventDefault()
 })
 
