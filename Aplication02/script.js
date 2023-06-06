@@ -11,24 +11,24 @@ calc.addEventListener('click', function (e) {
 	let n1 = nota1.value,
 		n2 = nota2.value,
 		med = ((n1 + n2) / 2)
-		media.value = med,
-		temp = sit(med)
+	media.value = med
+	let temp = sit(med)
 	situacao.textContent = temp
 
 	e.preventDefault()
 })
 
 function sit(med) {
-	let s = ""
+	let s = ''
 
 	if (med < 6) {
-		s = "Reprovado"
+		s = 'Reprovado'
 	}
 	else if (6 <= med < 7) {
-		s = "AF"
+		s = 'AF'
 	}
 	else {
-		s = "Aprovado"
+		s = 'Aprovado'
 	}
 	return s
 }
