@@ -8,9 +8,9 @@ let nota1 = document.querySelector('#nota1'),
 	aviso = document.querySelector('#aviso')
 
 calc.addEventListener('click', function (e) {
-	let n1 = nota1.value,
-		n2 = nota2.value,
-		med = ((n1 + n2) / 2)
+	let n1 = nota1.value
+	let n2 = nota2.value
+	let med = ((n1 + n2) / 2).toFixed(1)
 	media.value = med
 	let temp = sit(med)
 	situacao.textContent = temp
@@ -24,7 +24,7 @@ function sit(med) {
 	if (med < 6) {
 		s = 'Reprovado'
 	}
-	else if (6 <= med < 7) {
+	else if (6 <= med && med < 7) {
 		s = 'AF'
 	}
 	else {
