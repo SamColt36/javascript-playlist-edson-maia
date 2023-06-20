@@ -36,3 +36,5 @@ let exponencia2 = 123e-5 // 0.00123
 
 // BigInt é um tipo de dao para repressentar numéros grandes. Similar ao Longer
 const PI = 3.141592653589793
+
+
