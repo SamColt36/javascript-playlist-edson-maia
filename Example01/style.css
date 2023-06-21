@@ -9,35 +9,20 @@
 a {
 	color: inherit;
 }
-
-body {
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.box {
 	width: 300px;
 	height: 300px;
-	border: 2px solid red;
-	overflow: hidden;
+	background-color: lightblue;
+	border: 1px solid #fff;
+	display: inline-block;
+	margin: 50px 0;
 }
 
-#container-img {
-	position: relative;
-	width: 100%;
-	height: 100%;
+.avancar {
+	transform: translateX(300px);
+	transition: .8s ease-in-out;
 }
-
-.container-button {
-	display: block;
-}
-#container-img>img {
-	height: 100%;
-	width: 300px;
+.voltar {
+	transform: translateX(-300px);
+	transition: .8s ease-in-out;
 }
