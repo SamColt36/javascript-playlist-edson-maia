@@ -7,8 +7,8 @@ let eu = {
 	// também é possível adicionar função dentro do elemento do objeto
 	nomeCompleto: function () { return this.nome + " " + this.sobrenome }
 }
-function imc () {
-	let result =  (eu.peso / (Math.pow(eu.altura, 2)))
+function imc() {
+	let result = (eu.peso / (Math.pow(eu.altura, 2)))
 	return result
 }
 document.write(`<h1> Nome completo: ${eu.nomeCompleto()} </h1>`)
@@ -20,3 +20,17 @@ document.write(`<h1> Imc: ${imc().toFixed(2)} </h1>`)
 // Alterar propriedade do objeto
 eu.nome = "Sam Colt 1836"
 document.write(`<h1> Nome atualizado: ${eu.nome} </h1>`)
+
+// Int.NumberFormat = Formata String sensíveis a localidade
+// new Intl.NumberFormat([locales[, options]])
+
+// Formatando moeda
+// Cria-se um objeto com as propriedades
+// style permite 'decimal' (números), 'currency' (moeda) e 'percent' (percentual)
+let objetoFormatador1 = { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 },
+	precoGasolina = new Intl.NumberFormat('pt-BR', objetoFormatador1),
+	price = 3.65648941616464186
+//document.write(precoGasolina.format(price))
+// 
+let resultadoImc = new Intl.NumberFormat('pt-br', {style: 'decimal'})
+document.write(imc().toFixed(2))
