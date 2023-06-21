@@ -19,6 +19,11 @@ document.write('Esse é um texto gerado usando document.write()')
 // CONSOLE.LOG escreve no console do navegador
 console.log('Essa é uma mensagem no console do navegador')
 
+// WINDOW.PLOT() imprimi a página current
+// Esse método não utiliza parâmetros 
+
 function plot() {
+	// não é obrigatório o uso do objeto window
+	// print() também serviria
 	window.print()
 }
