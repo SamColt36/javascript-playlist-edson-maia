@@ -1,0 +1,1 @@
+let btnAntes = document.querySelector('#antes')

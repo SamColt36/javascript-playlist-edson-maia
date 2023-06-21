@@ -1,0 +1,43 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style-type: none;
+}
+
+a {
+	color: inherit;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+	height: 300px;
+	border: 2px solid red;
+	overflow: hidden;
+}
+
+#container-img {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.container-button {
+	display: block;
+}
+#container-img>img {
+	height: 100%;
+	width: 300px;
+}
