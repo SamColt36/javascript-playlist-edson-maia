@@ -1,6 +1,6 @@
 // DOM = Document Object Model
-document.getElementById("demo").style.backgroundColor = "#1F1F1F"
-document.getElementById("demo").style.color = "white"
+document.querySelector("#demo").style.backgroundColor = "#1F1F1F"
+document.querySelector("#demo").style.color = "white"
 
 // O comando document se refere ao documento html como um todo
 // Para selecionar o primeiro elemento por tag, id ou class usa-se o método querySelector()
@@ -12,6 +12,7 @@ document.getElementById("demo").style.color = "white"
 // document.querySelector('.box3').style.backgroundColor = "green"
 
 // Para selecionar todos os elementos por tag, id ou class usa-se o método querySelectorAll()
+// O método querySelectorAll() criar um array com todos os elementos selecionados e guarda numa variável
 // Uma boa práticar é atribuir a seleção a uma variável confome exemplo abaixo
 let titulo = document.querySelector('h2')
 titulo.style.color = "orange"
@@ -23,7 +24,7 @@ let box3 = document.querySelectorAll('.box3')
 box3[0].style.color = "blue"
 
 // Outros métodos de seleção:
-// .getElementByTagName()
-// .getElementById()	obs: não é necessário usar o seletor #
-// .getElementByClassName()		obs: não é necessário usar o seletor .
+// .getElementByTagName()	obs: seleção por tag
+// .getElementById()	obs: não é necessário usar o seletor '#'
+// .getElementByClassName()		obs: não é necessário usar o seletor '.'
 
