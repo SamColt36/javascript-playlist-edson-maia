@@ -32,5 +32,5 @@ let objetoFormatador1 = { style: 'currency', currency: 'BRL', minimumFractionDig
 	price = 3.65648941616464186
 //document.write(precoGasolina.format(price))
 // 
-let resultadoImc = new Intl.NumberFormat('pt-br', {style: 'decimal'})
-document.write(imc().toFixed(2))
+let resultadoImc = new Intl.NumberFormat('pt-BR', {style: 'decimal', maximumFractionDigits: 3})
+document.write(`<h2> IMC com três casas decimais padrão pt-BR ${resultadoImc.format(imc())}</h2>`)
