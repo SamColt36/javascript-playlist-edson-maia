@@ -47,7 +47,9 @@ titulo.addEventListener('click', function () { console.log('Você clicou no tít
 
 
 // Arrow function ES 2015  em diante
-// Arrow function é uma função anônima (que não possui nome), não possui 'return' e nem 'function'
+// Arrow function é uma função anônima (que não possui nome, não possui 'return' e nem 'function')
+
+
 /* 
 Geralmente é declarada através de uma 'const' cujo nome seria o nome da function seguido por space e um sinal de '=>' e as chaves como um elemento opcional 
 */
