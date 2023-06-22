@@ -55,8 +55,6 @@ Geralmente é declarada através de uma 'const' cujo nome seria o nome da functi
 */
 
 
-const nomeDaFunction = () => {
-	//procedimento
-	document.write('Olá mundo usando Arrow Funcion')
-}
-nomeDaFunction()
+const funcaoUm = () => document.write('Olá mundo usando Arrow Funcion')
+
+funcaoUm()
