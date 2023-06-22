@@ -1,7 +1,7 @@
-document.getElementById('demo').style.backgroundColor = '#1F1F1F'
-document.getElementById('demo').style.color = '#ccc'
+let page = document.getElementById('demo')
+page.style.backgroundColor = '#1F1F1F'
+page.style.color = '#ccc'
 
-document.write(Date())
 /*
 onchange		Um elemento HTML foi alterado
 onclick			O usuário clica em um elemento HTML
