@@ -17,7 +17,3 @@ function validarCamposDeEntrada() {
 // 1: Preenchimento de todos os campos
 // 2: Inserção de data válida
 // 3: Entrada de formato diferente. Número em texto; e texto em número
-
-// Exemplo Prático
-// Todos os campos do lado HTML já estão 'required' logo não é necessário criar implementação em js para campos sem entrada
-// 
