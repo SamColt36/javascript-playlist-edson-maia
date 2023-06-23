@@ -5,5 +5,13 @@ page.style.color = '#ccc'
 // No DOM todos os elementos HTML são vistos como objetos
 // Acessar conteúdo de elementos com INNERHTML ou 
 let p = document.querySelector('p')
-document.write("Geracom com INNERHTML" + p.innerHTML + "<br>")
-document.write("Geracom com TEXTCONTENT" + p.textContent)
+document.write("Geracom com INNERHTML: " + p.innerHTML + "<br>")
+document.write("Geracom com TEXTCONTENT: " + p.textContent)
+
+// Métodos de acesso a elementos e seleção de elementos
+// .getElementById()
+// .getElementsByClassName()
+// .getElementsByTagName()
+// .querySelector()
+// .querySelectorAll()
+
