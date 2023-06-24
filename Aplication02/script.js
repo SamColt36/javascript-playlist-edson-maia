@@ -45,9 +45,16 @@ function situacaoNota(m) {
 	return aux
 }
 
-function limparFormatacao() {
-	
-}
+btnLimpar.addEventListener('click', function (e) {
+	situacao.classList.remove('reprovado')
+	situacao.classList.remove('recuperacao')
+	situacao.classList.remove('aprovado')
+
+	nota1.remove
+
+	e.preventDefault()
+})
+
 function validar() {
 	let aux = ''
 	if (parseFloat(nota1.value) < 0 || parseFloat(nota2.value) < 0) {
