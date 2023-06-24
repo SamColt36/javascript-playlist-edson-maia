@@ -56,5 +56,6 @@ Geralmente é declarada através de uma 'const' cujo nome seria o nome da functi
 
 
 const funcaoUm = () => document.write('Olá mundo usando Arrow Funcion')
-
+const funcaoDois = () => 'Olá mundo sem saída de texo'
 funcaoUm()
+document.write(funcaoDois())
