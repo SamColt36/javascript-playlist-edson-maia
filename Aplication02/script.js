@@ -45,6 +45,9 @@ function situacaoNota(m) {
 	return aux
 }
 
+function limparFormatacao() {
+	
+}
 function validar() {
 	let aux = ''
 	if (parseFloat(nota1.value) < 0 || parseFloat(nota2.value) < 0) {
