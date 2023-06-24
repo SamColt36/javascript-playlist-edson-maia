@@ -15,18 +15,32 @@ btnCalcular.addEventListener('click', function (e) {
 	// .parseFloat() analisa uma string e retorna um número de ponto flutuante correspondente.
 	let n1 = parseFloat(nota1.value),
 		n2 = parseFloat(nota2.value),
-		m = ((n1 + n2) / 2)
+		m = calcularMedia(n1, n2)
 	media.value = m
 	let sit = situacaoNota(m)
 	situacao.value = sit
+
 	e.preventDefault()
 })
-
+// Function calcular media
+function calcularMedia(a, b) {
+	return ((a + b) / 2)
+}
+// Function situação
 function situacaoNota(m) {
 	let aux = ''
-	if (m < 6) aux = 'Reprovado'
-	else if (m >= 6 && m < 7) aux = 'Recuperação'
-	else aux = 'Aprovado'
+	if (m < 6) {
+		aux = 'Reprovado'
+		situacao.classList.add('reprovado')
+	}
+	else if (m >= 6 && m < 7) {
+		aux = 'Recuperação'
+		situacao.classList.add('recuperacao')
+	}
+	else {
+		aux = 'Aprovado'
+		situacao.classList.add('aprovado')
+	}
 
 	return aux
 }
