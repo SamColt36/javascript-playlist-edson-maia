@@ -24,9 +24,27 @@ btnCalcular.addEventListener('click', function (e) {
 	e.preventDefault()
 })
 
+// Function de reset
+function reset() {
+	situacao.classList.remove('reprovado')
+	situacao.classList.remove('recuperacao')
+	situacao.classList.remove('aprovado')
+	aviso.classList.remove('alerta')
+	nota1.value = ''
+	nota2.value = ''
+	media.value = ''
+	aviso.textContent = ''
+}
+
+// Botão de reset
+btnLimpar.addEventListener('click', function (e) {
+	reset()
+	e.preventDefault()
+})
+
 // Function calcular media
-function calcularMedia(a, b) {
-	return ((a + b) / 2)
+function calcularMedia(num1, num2) {
+	return ((num1 + num2) / 2)
 }
 
 // Function situação
@@ -48,31 +66,16 @@ function situacaoNota(m) {
 	return aux
 }
 
-function reset() {
-	situacao.classList.remove('reprovado')
-	situacao.classList.remove('recuperacao')
-	situacao.classList.remove('aprovado')
-	aviso.classList.remove('alerta')
-	nota1.value = ''
-	nota2.value = ''
-	media.value = ''
-	aviso.textContent = ''
-}
+function validar(nota) {
 
-btnLimpar.addEventListener('click', function (e) {
-	reset()
-	e.preventDefault()
-})
-
-function validar() {
-	let num1 = nota1.value
-	let num2 = nota2.value
-
-	if (num1 < 0 || num1 > 10 || num2 < 0 || num2 > 10) {
+	if (nota.value < 0 || nota.value > 10) {
 		aviso.textContent = 'Digite um valor entre 0.0 e 10.0'
+		nota.value = ''
+
 		aviso.classList.add('alerta')
 		// Função para setar tempo de vida
 		// sintaxe: setTimeout(function(), tempo em ms)
+		// Explicação: Chamar a função reset() e ela terá duração de 2000ms = 2s
 		setTimeout(function () {
 			reset()
 		}, 2000)
