@@ -17,9 +17,13 @@ btnCalcular.addEventListener('click', function (e) {
 		n2 = parseFloat(nota2.value),
 		m = calcularMedia(n1, n2)
 
-	media.value = m
-	let sit = situacaoNota(m)
-	situacao.value = sit
+	if (isNaN(m) || m < 0) {
+		alert('Digite a Nota1 e a Nota2')
+	} else {
+		media.value = m
+		let sit = situacaoNota(m)
+		situacao.value = sit
+	}
 
 	e.preventDefault()
 })
