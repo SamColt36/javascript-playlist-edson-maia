@@ -89,3 +89,7 @@ button:hover {
 #btnLimpar {
 	background: #ff3d00;
 }
+
+.btnCalcularDesativado {
+	pointer-events: none;
+}

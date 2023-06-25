@@ -16,16 +16,19 @@ btnCalcular.addEventListener('click', function (e) {
 	let n1 = parseFloat(nota1.value),
 		n2 = parseFloat(nota2.value),
 		m = calcularMedia(n1, n2)
+
 	media.value = m
 	let sit = situacaoNota(m)
 	situacao.value = sit
 
 	e.preventDefault()
 })
+
 // Function calcular media
 function calcularMedia(a, b) {
 	return ((a + b) / 2)
 }
+
 // Function situação
 function situacaoNota(m) {
 	let aux = ''
@@ -45,7 +48,7 @@ function situacaoNota(m) {
 	return aux
 }
 
-btnLimpar.addEventListener('click', function (e) {
+function reset() {
 	situacao.classList.remove('reprovado')
 	situacao.classList.remove('recuperacao')
 	situacao.classList.remove('aprovado')
@@ -54,25 +57,25 @@ btnLimpar.addEventListener('click', function (e) {
 	nota2.value = ''
 	media.value = ''
 	aviso.textContent = ''
+}
 
+btnLimpar.addEventListener('click', function (e) {
+	reset()
 	e.preventDefault()
 })
 
 function validar() {
-	function procedimento(nota) {
-		if (parseFloat(nota.value) < 0 || parseFloat(nota.value) > 10) {
-			aviso.textContent = 'Digite um valor entre 0.0 e 10.0'
-			aviso.classList.add('alerta')
-			// Função para setar tempo de vida
-			// sintaxe: setTimeout(function(), tempo em ms)
-			setTimeout(function(){
-				nota.value = ''
-				aviso.textContent = ''
-				aviso.classList.remove('alerta')
+	let num1 = nota1.value
+	let num2 = nota2.value
 
-			}, 2000)
-		}
+	if (num1 < 0 || num1 > 10 || num2 < 0 || num2 > 10) {
+		aviso.textContent = 'Digite um valor entre 0.0 e 10.0'
+		aviso.classList.add('alerta')
+		// Função para setar tempo de vida
+		// sintaxe: setTimeout(function(), tempo em ms)
+		setTimeout(function () {
+			reset()
+		}, 2000)
+
 	}
-	procedimento(nota1)
-	procedimento(nota2)
 }
