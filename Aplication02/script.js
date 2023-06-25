@@ -49,17 +49,30 @@ btnLimpar.addEventListener('click', function (e) {
 	situacao.classList.remove('reprovado')
 	situacao.classList.remove('recuperacao')
 	situacao.classList.remove('aprovado')
-
-	nota1.remove
+	aviso.classList.remove('alerta')
+	nota1.value = ''
+	nota2.value = ''
+	media.value = ''
+	aviso.textContent = ''
 
 	e.preventDefault()
 })
 
 function validar() {
-	let aux = ''
-	if (parseFloat(nota1.value) < 0 || parseFloat(nota2.value) < 0) {
-		aux = 'Error Input'
+	function procedimento(nota) {
+		if (parseFloat(nota.value) < 0 || parseFloat(nota.value) > 10) {
+			aviso.textContent = 'Digite um valor entre 0.0 e 10.0'
+			aviso.classList.add('alerta')
+			// Função para setar tempo de vida
+			// sintaxe: setTimeout(function(), tempo em ms)
+			setTimeout(function(){
+				nota.value = ''
+				aviso.textContent = ''
+				aviso.classList.remove('alerta')
+
+			}, 2000)
+		}
 	}
-	aviso.value = aux
-	return aux
+	procedimento(nota1)
+	procedimento(nota2)
 }
