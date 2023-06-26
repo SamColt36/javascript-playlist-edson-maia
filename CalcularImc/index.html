@@ -20,20 +20,22 @@
 		<form action="" method="POST" id='formulario'>
 			<div class="form-group">
 				<label for="nome">Nome</label>
-				<input type="text" name="nome" id="nome" class="input" autofocus required />
+				<input type="text" name="nome" id="nome" class="input" autofocus required onblur="validar(this)" />
 			</div>
 			<div class="form-group">
 				<label for="idade">Idade</label>
-				<input type="number" min="0" max="130" name="idade" id="idade" class="input" required />
+				<input type="number" min="0" max="130" name="idade" id="idade" class="input" required
+					onblur="validar(this)" />
 			</div>
 			<div class="form-group">
 				<label for="peso">Peso</label>
-				<input type="number" step="0.01" min="0.0" max="500.0" name="peso" id="peso" class="input" required />
+				<input type="number" step="0.01" min="0.0" max="500.0" name="peso" id="peso" class="input" required
+					onblur="validar(this)" />
 			</div>
 			<div class="form-group">
 				<label for="altura">Altura</label>
-				<input type="number" step="0.01" min="0.0" max="2.70" name="altura" id="altura" class="input"
-					required />
+				<input type="number" step="0.01" min="0.0" max="2.70" name="altura" id="altura" class="input" required
+					onblur="validar(this)" />
 			</div>
 			<!-- BOTOES -->
 			<div class="form-group">
