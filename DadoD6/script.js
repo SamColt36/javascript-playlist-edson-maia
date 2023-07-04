@@ -6,10 +6,8 @@ let	btnSortear = document.getElementById('btnSortear')
 let	audio = document.getElementById('dadoRolando')
 
 
-btnSortear.addEventListener('click', function () {
+btnSortear.addEventListener('click', function() {
 	imgDado.classList.add('animar')
-	sorteado.classList.add('aparecer')
-	audio.play()
-	btnSortear.style.display = 'none'
+	imgDado.classList.add('aparecer')
 	console.log('casa')
 })
