@@ -110,4 +110,5 @@ h1 {
 
 .aparecer {
 	animation: aparecer 1.5s ease-in;
+	animation-delay: .5s;
 }
