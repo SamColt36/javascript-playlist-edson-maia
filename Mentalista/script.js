@@ -1,35 +1,51 @@
 let numeroSecreto = 0
 function gerarNumeroSecreto() {
-	numeroSecreto = (Math.random() * 10).toFixed(0)
+	numeroSecreto = parseInt(Math.random() * 10)
 	console.log(numeroSecreto)
 }
 
-const inputNumero = document.getElementById('inputNumero')
-let inputValue = parseFloat(inputNumero.value)
-const aviso = document.getElementById('aviso')
+let inputNumero = document.getElementById('inputNumero')
+let aviso = document.getElementById('aviso')
+let btnChutar = document.getElementById('btnChutar')
+btnChutar.disabled = true
 
 function validarNumeroDigitado() {
-	if (inputValue > 10 || inputValue < 0 || isNaN(inputValue)) {
-		aviso.textContent = 'Digite um valor entre 0 e 10'
-		aviso.classList.add('class', 'errou')
-	}
-	setTimeout(function () {
-		aviso.classList.remove('class', 'errou')
-		aviso.textContent = null
+	if (parseInt(inputNumero) < 0 || parseInt(inputNumero) > 10 || isNaN(parseInt(inputNumero))) {
+		aviso.classList.add('errou')
+		aviso.textContent = 'Digite uma número entre 0 e 10'
 		inputNumero.value = ''
-	}, 1750)
+		setTimeout(function () {
+			aviso.classList.remove('errou')
+			aviso.textContent = ''
+		}, 1750)
+	} else btnChutar.disabled = false
+
 }
-const musicaDeFundo = document.getElementById('musicaDeFundo')
-function tocarMusicaDeFundo() {
-	if (musicaDeFundo.play()) {
-		musicaDeFundo.muted()
-	}
-	else{
+
+let musicaDeFundo = document.getElementById('musicaDeFundo')
+function ativarDesativarMusica() {
+	if (musicaDeFundo.muted || musicaDeFundo.pause()) {
 		musicaDeFundo.play()
+	} else {
+		musicaDeFundo.pause()
 	}
 }
-function ativarBtnChutar() {
-	if (inputValue == numeroSecreto) {
-		console.log('acertou miserável')
+
+function tocarMusicaDeFundo() {
+	musicaDeFundo.play()
+}
+
+function jogar(){
+	validarNumeroDigitado()
+	if (parseInt(inputNumero.value) == numeroSecreto){
+		aviso.classList.remove('errou')
+		aviso.classList.add('acertou')
+		aviso.textContent = 'Acertou a senha: ' + numeroSecreto
+		setTimeout(function () {
+			aviso.classList.remove('acertou')
+			aviso.textContent = ''
+			inputNumero.value = ''
+		}, 2000)
 	}
+	else console.log('errou a senha')
 }
