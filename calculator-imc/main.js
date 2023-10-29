@@ -15,8 +15,9 @@ const pesoResult = $('p#peso.pessoa')
 const alturaResult = $('p#altura.pessoa')
 const imcResult = $('p#imc.pessoa')
 
-function tabelaImc() {
-	const imc = calcularImc(peso, altura)
+function tabelaIMC(weight, height) {
+	const imc = calcularIMC(weight, height)
+
 	if (imc < 17) return 'Muito abaixo do peso'
 	else if (imc >= 17 && imc <= 18.49) return 'Abaixo do peso'
 	else if (imc >= 18.5 && imc <= 24.99) return 'Peso normal'
@@ -26,24 +27,32 @@ function tabelaImc() {
 	else if (imc >= 40) return 'Obesidade III(mórbida)'
 }
 
-function calcularImc(peso, altura) {
-	return peso.val() / (Math.pow(altura.val(), 2))
+function calcularIMC(weight, height) {
+	return (weight / (Math.pow(height, 2)))
 }
 
-function popularTabela() {
-	nomeResult.html(`${nome.val()}`)
-	idadeResult.html(`${idade.val()} anos`)
-	pesoResult.html(`${(peso.val()).toFixed(2)} kg`)
-	alturaResult.html(`${(altura.val()).toFixed(2)} m`)
-	imcResult.html(`${tabelaImc()}`)
+function popularTabela(name, age, weight, height) {
+	nomeResult.html(`${name}`)
+	idadeResult.html(`${age} anos`)
+	pesoResult.html(`${weight} kg`)
+	alturaResult.html(`${height} m`)
+	imcResult.html(`${tabelaIMC(weight, height)}`)
 }
 
 btnEnviar.click(e => {
-	popularTabela()
-	aviso.html(`${tabelaImc()}`)
-	resultadoImc.val(calcularImc(peso, altura).toFixed(2))
+	const $nome = nome.val()
+	const $idade = idade.val()
+	const $peso = peso.val()
+	const $altura = altura.val()
+	const IMC = calcularIMC($peso, $altura)
+
+	popularTabela($nome, $idade, $peso, $altura)
+	aviso.html(`${tabelaIMC($peso, $altura)}`)
+	resultadoImc.val(IMC)
+
 	e.preventDefault()
 })
+
 
 btnLimpar.click(e => {
 	limparForm()
@@ -53,6 +62,7 @@ btnLimpar.click(e => {
 function limparForm() {
 	$('p.pessoa').html('')
 	$('.input').val('')
+	aviso.html('')
 	resultadoImc.val('0.0')
 }
 
@@ -65,14 +75,14 @@ function alertPersonalizado() {
 	})
 }
 
-function validarForm() {
-	if (idade.val() < 0 || peso.val() < 0 || altura.val() < 0) {
+function validarForm(age, weight, height) {
+	if (age < 0 || weight < 0 || height < 0) {
 		alertPersonalizado()
+		setTimeout(limparForm, 1500)
 	}
 }
 
 $('#idade, #peso, #altura').change(e => {
-	validarForm()
-	setTimeout(limparForm, 1500)
+	validarForm(idade.val(), peso.val(), altura.val())
 	e.preventDefault()
 })
