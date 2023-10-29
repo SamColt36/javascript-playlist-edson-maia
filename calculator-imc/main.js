@@ -28,7 +28,7 @@ function tabelaIMC(weight, height) {
 }
 
 function calcularIMC(weight, height) {
-	return (weight / (Math.pow(height, 2)))
+	return (weight / (Math.pow(height, 2))).toFixed(1)
 }
 
 function popularTabela(name, age, weight, height) {
