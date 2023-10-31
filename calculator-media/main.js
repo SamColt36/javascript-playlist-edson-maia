@@ -21,13 +21,13 @@ function alertPersonalizado() {
 	return Swal.fire({
 		icon: 'error',
 		title: 'Oops...',
-		text: 'Valores negativos não são permitidos aqui!',
+		text: 'Só são permitidos valores dentro do intervalo de 0 a 10',
 		footer: '<a href="https://medium.com/code-prestige/alertas-bonitos-responsivos-e-customizados-com-o-sweetalert2-8db930038137">Gostou do alert() diferenciado?! Confere o link.</a>'
 	})
 }
 
 function validarInputValues(firstNumber, secondNumber) {
-	if (firstNumber < 0 || secondNumber < 0) {
+	if (firstNumber < 0 || secondNumber < 0 || firstNumber > 10 || secondNumber > 10) {
 		alertPersonalizado()
 		setTimeout(clearForm, 1500)
 	}
