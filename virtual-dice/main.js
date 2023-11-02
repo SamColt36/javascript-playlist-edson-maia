@@ -8,11 +8,10 @@ const music = new Audio('dado-rolando.mp3')
 $('#btnSortear').click(e => {
 	music.play()
 	numeroRamdomico = getRandomInt(1, 6)
-	
+
 	$('#imgDado').addClass('animar')
 	$('#sorteado').addClass('aparecer')
 	$('#btnSortear').css('display', 'none')
-
 
 	setTimeout(() => {
 		$('#sorteado').html(numeroRamdomico)
