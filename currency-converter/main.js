@@ -44,6 +44,7 @@ $(btnConverter).click((e) => {
 
 $(btnLimpar).click((e) => {
 	desativarBotao()
+	valorEmReal.focus()
 	$(valorEmReal).prop('value', null)
 	$('input[name="moedaEstrangeira"]').prop('checked', false)
 	$(aviso).html('Digite o valor, escolha a moeda e converter')
