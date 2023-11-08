@@ -1,23 +1,9 @@
-const inputNota1 = $('#nota1')
-const inputNota2 = $('#nota2')
+import { $inputNota1, $inputNota2, $btnCalcular, $btnLimpar, $inputMedia, $situacao } from "./dom.js"
+import { calcularMediaAritmetica, situacaoALuno } from './media.js'
+import { clearForm } from "./form.js";
 
-const btnCalcular = $('#btnCalcular')
-const btnLimpar = $('#btnLimpar')
 
-const inputMedia = $('#media')
-const situacao = $('#situacao')
-const aviso = $('#aviso')
-
-function calcularMedia(firstNumber, secondNumber) {
-	return (Number(firstNumber) + Number(secondNumber)) / 2
-}
-
-function clearForm() {
-	$('input').val('')
-	situacao.attr('class', 'default')
-}
-
-function alertPersonalizado() {
+export function alertPersonalizado() {
 	return Swal.fire({
 		icon: 'error',
 		title: 'Oops...',
@@ -26,42 +12,14 @@ function alertPersonalizado() {
 	})
 }
 
-function validarInputValues(firstNumber, secondNumber) {
-	if (firstNumber < 0 || secondNumber < 0 || firstNumber > 10 || secondNumber > 10) {
-		alertPersonalizado()
-		setTimeout(clearForm, 1500)
-	}
-}
-
-$(inputNota1, inputNota2).change(e => {
-	validarInputValues(inputNota1.val(), inputNota2.val())
+$btnCalcular.click(e => {
+	const MEDIA = calcularMediaAritmetica($inputNota1.val(), $inputNota2.val())
+	$inputMedia.val(MEDIA)
+	$situacao.val(situacaoALuno(MEDIA))
 	e.preventDefault()
 })
 
-function situacaoALuno(media) {
-	if (media <= 5) {
-		situacao.attr('class', 'reprovado')
-		return 'Reprovado'
-	}
-	else if (media > 5 && media < 7) {
-		situacao.attr('class', 'recuperacao')
-
-		return 'Recuperação'
-	}
-	else if (media >= 7) {
-		situacao.attr('class', 'aprovado')
-		return 'Aprovado'
-	}
-}
-
-btnCalcular.click(e => {
-	const MEDIA = calcularMedia(inputNota1.val(), inputNota2.val())
-	inputMedia.val(MEDIA)
-	situacao.val(situacaoALuno(MEDIA))
-	e.preventDefault()
-})
-
-btnLimpar.click(e => {
+$btnLimpar.click(e => {
 	clearForm()
 	e.preventDefault()
 })

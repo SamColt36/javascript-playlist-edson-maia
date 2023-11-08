@@ -12,42 +12,42 @@ import {
 	$pesoResult,
 	$alturaResult,
 	$imcResult,
-} from './dom.js';
+} from './dom.js'
 
-import { tabelaIMC, calcularIMC } from './imc.js';
+import { tabelaIMC, calcularIMC } from './imc.js'
 
 function popularTabela(name, age, weight, height) {
-	$nomeResult.text(name);
-	$idadeResult.text(`${age} anos`);
-	$pesoResult.text(`${weight} kg`);
-	$alturaResult.text(`${height} m`);
-	$imcResult.text(`${tabelaIMC(weight, height)}`);
+	$nomeResult.text(name)
+	$idadeResult.text(`${age} anos`)
+	$pesoResult.text(`${weight} kg`)
+	$alturaResult.text(`${height} m`)
+	$imcResult.text(`${tabelaIMC(weight, height)}`)
 }
 
 $btnEnviar.on('click', e => {
-	const nome = $nome.val();
-	const idade = $idade.val();
-	const peso = $peso.val();
-	const altura = $altura.val();
-	const IMC = calcularIMC(peso, altura);
+	const nome = $nome.val()
+	const idade = $idade.val()
+	const peso = $peso.val()
+	const altura = $altura.val()
+	const IMC = calcularIMC(peso, altura)
 
-	popularTabela(nome, idade, peso, altura);
-	$aviso.text(`${tabelaIMC(peso, altura)}`);
-	$resultadoImc.val(IMC);
+	popularTabela(nome, idade, peso, altura)
+	$aviso.text(`${tabelaIMC(peso, altura)}`)
+	$resultadoImc.val(IMC)
 
-	e.preventDefault();
-});
+	e.preventDefault()
+})
 
 $btnLimpar.on('click', e => {
-	limparForm();
-	e.preventDefault();
-});
+	limparForm()
+	e.preventDefault()
+})
 
 function limparForm() {
-	$('.pessoa').text('');
-	$('.input').val('');
-	$aviso.text('');
-	$resultadoImc.val('0.0');
+	$('.pessoa').text('')
+	$('.input').val('')
+	$aviso.text('')
+	$resultadoImc.val('0.0')
 }
 
 function alertPersonalizado() {
@@ -61,12 +61,12 @@ function alertPersonalizado() {
 
 function validarForm(age, weight, height) {
 	if (age < 0 || weight < 0 || height < 0) {
-		alertPersonalizado();
-		setTimeout(limparForm, 1500);
+		alertPersonalizado()
+		setTimeout(limparForm, 1500)
 	}
 }
 
 $('#idade, #peso, #altura').on('change', e => {
-	validarForm($idade.val(), $peso.val(), $altura.val());
-	e.preventDefault();
-});
+	validarForm($idade.val(), $peso.val(), $altura.val())
+	e.preventDefault()
+})
