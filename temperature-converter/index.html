@@ -17,7 +17,7 @@
 
 			<h1>Conversor de Temperaturas</h1>
 			<p class='instrucoes'>Use o slider da escala de graus Celsius para converter automaticamente.</p>
-			<button id='btnZerar' onClick="zerar()">Zerar</button>
+			<button id='btnZerar'>Zerar</button>
 
 			<div class="form-group">
 
@@ -30,36 +30,12 @@
 					<span id='minC'>-273.00</span>
 
 					<input type="range" min='-273' max='100' step='0.01' name="celsius" id="celsius" value='0.00'
-						list="marcas" onChange='atualizaC(); atualizaF(); atualizaK()' class="animar" autofocus />
+						list="marcas" class="animar" autofocus />
 
 					<span id='maxC'>100.00</span>
 
 				</div>
 			</div>
-
-			<datalist id="marcas">
-				<option value="-100">
-				<option value="-90">
-				<option value="-80">
-				<option value="-70">
-				<option value="-60">
-				<option value="-50">
-				<option value="-40">
-				<option value="-30">
-				<option value="-20">
-				<option value="-10">
-				<option value="0">
-				<option value="10">
-				<option value="20">
-				<option value="30">
-				<option value="40">
-				<option value="50">
-				<option value="60">
-				<option value="70">
-				<option value="80">
-				<option value="90">
-				<option value="100">
-			</datalist>
 
 			<div class="form-group">
 
@@ -90,7 +66,9 @@
 	</main>
 
 	<script src="../jQuery.js"></script>
-	<script src="https://cdn.jsscriptdelivr.net/npm/sweetalert2@11"></script>
+	<script type="module" src="conversao-termometrica.js"></script>
+	<script type="module" src="dom.js"></script>
+	<script type="module" src="form.js"></script>
 	<script type="module" src="main.js"></script>
 </body>
 
