@@ -1,8 +1,9 @@
 import { $instructions, $divQuestions, $questionNumber, $question, $responseTrue, $responseFalse, $notice } from './dom.js'
 import { questions } from './questions.js'
 
-let index = 0
-let placar = 0
+let index = 0, placar = 0
+const positiveAudio = new Audio('./assets/positive.mp3')
+const positiveNegative = new Audio('./assets/negative.mp3')
 
 function mostrarPrimeiraQuestao() {
 	index = 0
@@ -19,6 +20,7 @@ function mostrarProximaQuestao(bool) {
 	const question = questions[index - 1]
 
 	if (index < questions.length) {
+
 		$question.html(questions[index].statement)
 		$questionNumber.text(index + 1)
 		$notice.text(`Questão ${index + 1} de ${questions.length}`)
@@ -35,10 +37,21 @@ function mostrarProximaQuestao(bool) {
 }
 
 function validarResposta(bool, question) {
+	// ACERTOU
 	if (bool === question.rightAlternative) {
+		positiveAudio.play()
 		placar += 10
+		$divQuestions.addClass('acertou')
+		$divQuestions.removeClass('errou')
 		$instructions.text(`Pontos ${placar}`)
-	} else $instructions.text(`Pontos ${placar}`)
+	}
+	// ERROU
+	else {
+		positiveNegative.play()
+		$divQuestions.addClass('errou')
+		$divQuestions.removeClass('acertou')
+		$instructions.text(`Pontos ${placar}`)
+	}
 }
 
 function gameOver() {
@@ -50,13 +63,21 @@ function gameOver() {
 	}, 500)
 }
 
+function addRemoveStyleContainerWithQuestions() {
+	return setTimeout(() => {
+		$divQuestions.removeClass('acertou')
+		$divQuestions.removeClass('errou')
+	}, 350)
+}
 
 $responseTrue.click(e => {
 	mostrarProximaQuestao(true)
+	addRemoveStyleContainerWithQuestions()
 	e.preventDefault()
 })
 
 $responseFalse.click(e => {
 	mostrarProximaQuestao(false)
+	addRemoveStyleContainerWithQuestions()
 	e.preventDefault()
 })
