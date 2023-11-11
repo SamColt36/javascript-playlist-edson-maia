@@ -1,4 +1,5 @@
 const $instructions = $('#instrucoes')
+const $divQuestions = $('.questoes')
 const $questionNumber = $('#numQuestao')
 const $question = $('#pergunta')
 
@@ -7,4 +8,4 @@ const $responseFalse = $('#b')
 
 const $notice = $('#aviso')
 
-export {$instructions, $questionNumber, $question, $responseTrue, $responseFalse, $notice}
+export { $instructions, $divQuestions, $questionNumber, $question, $responseTrue, $responseFalse, $notice}

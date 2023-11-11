@@ -1,8 +1,8 @@
-import { $instructions, $questionNumber, $question, $responseTrue, $responseFalse, $notice } from './dom.js'
+import { $instructions, $divQuestions, $questionNumber, $question, $responseTrue, $responseFalse, $notice } from './dom.js'
 import { questions } from './questions.js'
 
 let index = 0
-let count = 0
+let placar = 0
 
 function mostrarPrimeiraQuestao() {
 	index = 0
@@ -26,16 +26,30 @@ function mostrarProximaQuestao(bool) {
 		validarResposta(bool, question)
 	} else if (index === questions.length) {
 		validarResposta(bool, question)
-		setTimeout(() => mostrarPrimeiraQuestao(), 1000)
+		gameOver()
+		setTimeout(() => {
+			mostrarPrimeiraQuestao()
+			$divQuestions.css('display', 'inline-block');
+		}, 2000)
 	}
 }
 
 function validarResposta(bool, question) {
 	if (bool === question.rightAlternative) {
-		count += 10
-		$instructions.text(`Pontos ${count}`)
-	} else $instructions.text(`Pontos ${count}`)
+		placar += 10
+		$instructions.text(`Pontos ${placar}`)
+	} else $instructions.text(`Pontos ${placar}`)
 }
+
+function gameOver() {
+	setTimeout(() => {
+		$instructions.text(`Fim de jogo!`)
+		$divQuestions.css('display', 'none')
+		$notice.text(`Você conseguiu atingiu a nota ${placar}.`)
+		placar = 0
+	}, 500)
+}
+
 
 $responseTrue.click(e => {
 	mostrarProximaQuestao(true)
