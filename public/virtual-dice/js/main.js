@@ -1,7 +1,7 @@
 import { getRandomInt } from "./random.js"
 
 let numeroRamdomico
-const music = new Audio('dado-rolando.mp3')
+const music = new Audio('./audio/dado-rolando.mp3')
 
 $('#btnSortear').click(e => {
 	music.play()
@@ -13,7 +13,7 @@ $('#btnSortear').click(e => {
 
 	setTimeout(() => {
 		$('#sorteado').html(numeroRamdomico)
-		$('#imgDado').attr('src', `./assets/${numeroRamdomico}.png`)
+		$('#imgDado').attr('src', `./img/${numeroRamdomico}.png`)
 
 		$('#btnSortear').css('display', 'inline-block')
 
