@@ -21,4 +21,5 @@ function kelvinToCelsio(kelvin) {
 function kelvinToFahrenheit(kelvin) {
 	return (parseFloat(kelvin) * (9 / 5) - 549.67)
 }
+
 export { celsioToKelvin, celsioTofahrenheit, fahrenheitToCelsio, fahrenheitToKelvin, kelvinToCelsio, kelvinToFahrenheit }

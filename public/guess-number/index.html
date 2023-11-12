@@ -10,29 +10,28 @@
 	<title>Adivinhar número secreto</title>
 </head>
 
-<body onLoad='gerarNumeroSecreto()'>
+<body id="body">
 	<main id="tela-inicial">
 		<div id='titulo'>
 			<h1>Adivinhar número secreto</h1>
 		</div>
 		<p class='centro' id='dica'>Digite um número entre 1 e 10</p>
 		<section class="conteudos">
-			<input type="number" step="1" min="1" max="10" name="inputNumero" id="inputNumero" class="input animar"
-				onblur="validarNumeroDigitado(this.value)" onclick="tocarMusicaDeFundo(); ativarBtnChutar()">
-			<button id='btnChutar' class='botao' onclick="jogar()">Chutar</button>
+			<input type="number" step="1" min="1" max="10" name="inputNumero" id="inputNumero" class="input animar">
+			<button id='btnChutar' class='botao'>Chutar</button>
 			<br>
-			<button id='btnSom' class='botao' onclick="ativarDesativarMusica()">&#9835;</button>
+			<button id='btnSom' class='botao'>&#9835;</button>
 		</section>
 		<p class='centro' id='aviso'></p>
 	</main>
 
-	<!-- AUDIO musica de fundo -->
-	<audio preload loop id="musicaDeFundo" src="./audio/abertura-the-mentalist.mp3"></audio>
-
 	<!-- LINK PARA O JS EXTERNO -->
 	<script src="../libs/jQuery.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script src="./scripts/main.js"></script>
+	<script type="module" src="./scripts/dom.js"></script>
+	<script type="module" src="./scripts/funcoes-auxiliares.js"></script>
+	<script type="module" src="./scripts/numeroSecreto.js"></script>
+	<script type="module" src="./scripts/main.js"></script>
 </body>
 
 </html>

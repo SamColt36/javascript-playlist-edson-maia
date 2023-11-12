@@ -1,12 +1,12 @@
 import { $situacao } from './dom.js'
 
-export function calcularMediaAritmetica(firstNumber, secondNumber) {
+function calcularMediaAritmetica(firstNumber, secondNumber) {
 	firstNumber = parseFloat(firstNumber)
 	secondNumber = parseFloat(secondNumber)
 	return (firstNumber + secondNumber) / 2
 }
 
-export function situacaoALuno(media) {
+function situacaoALuno(media) {
 	if (media <= 5) {
 		$situacao.attr('class', 'reprovado')
 		return 'Reprovado'
@@ -18,3 +18,5 @@ export function situacaoALuno(media) {
 		return 'Aprovado'
 	}
 }
+
+export { calcularMediaAritmetica, situacaoALuno }

@@ -3,7 +3,7 @@ import { calcularMediaAritmetica, situacaoALuno } from './media.js'
 import { clearForm } from "./form.js";
 
 
-export function alertPersonalizado() {
+function alertPersonalizado() {
 	return Swal.fire({
 		icon: 'error',
 		title: 'Oops...',
@@ -23,3 +23,5 @@ $btnLimpar.click(e => {
 	clearForm()
 	e.preventDefault()
 })
+
+export {alertPersonalizado}

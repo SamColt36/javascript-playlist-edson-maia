@@ -1,7 +1,7 @@
 import { $inputNota1, $inputNota2, $situacao } from './dom.js'
 import { alertPersonalizado } from "./main.js"
 
-export function clearForm() {
+function clearForm() {
 	$('input').val('')
 	$situacao.attr('class', 'default')
 }
@@ -17,3 +17,5 @@ $($inputNota1, $inputNota2).change(e => {
 	validarInputValues($inputNota1.val(), $inputNota2.val())
 	e.preventDefault()
 })
+
+export {clearForm}
