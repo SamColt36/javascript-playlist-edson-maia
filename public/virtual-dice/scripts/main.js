@@ -13,7 +13,7 @@ $('#btnSortear').click(e => {
 
 	setTimeout(() => {
 		$('#sorteado').html(numeroRamdomico)
-		$('#imgDado').attr('src', `./img/${numeroRamdomico}.png`)
+		$('#imgDado').attr('src', `./images/${numeroRamdomico}.png`)
 
 		$('#btnSortear').css('display', 'inline-block')
 
