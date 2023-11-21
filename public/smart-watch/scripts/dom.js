@@ -1,22 +1,17 @@
-const dom = {
-	relogioDigital: $('#relogioDigital'),
-	h: $('#h'),
-	m: $('#m'),
-	s: $('#s'),
+const relogioDigital = $('#relogioDigital')
 
-	telaSmart: $('#telaSmart'),
-	relogioSmart: $('#relogioSmart'),
-	hSmart: $('#hSmart'),
-	mSmart: $('#mSmart'),
-	sSmart: $('#sSmart'),
+const telaSmart = $('#telaSmart')
+const relogioSmart = $('#relogioSmart')
+const hSmart = $('#hSmart')
+const mSmart = $('#mSmart')
+const sSmart = $('#sSmart')
 
-	dataSmart: $('#dataSmart'),
-	semana: $('#semana'),
-	data: $('#data'),
+const dataSmart = $('#dataSmart')
+const semana = $('#semana')
+const data = $('#data')
 
-	temperatura: $('#temperatura'),
-	temp: $('#temp'),
-	umidad: $('#umidad'),
-}
+const temperatura = $('#temperatura')
+const temp = $('#temp')
+const umidad = $('#umidad')
 
-export { dom }
+export { relogioDigital, telaSmart, relogioSmart, hSmart, mSmart, sSmart, dataSmart, semana, data, temperatura, temp, umidad }

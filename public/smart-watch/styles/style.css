@@ -58,6 +58,8 @@ section {
 }
 
 #relogioSmart {
+	display: flex;
+	align-items: baseline;
 	user-select: none;
 	margin-top: 1rem;
 }
@@ -94,10 +96,6 @@ section {
 
 .doisPontos {
 	animation: piscar 1s infinite;
-}
-
-.doisPontos:last-child {
-	font-size: 0.5rem;
 }
 
 #temperatura {

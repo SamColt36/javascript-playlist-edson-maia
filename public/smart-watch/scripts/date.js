@@ -1,17 +1,16 @@
-const dataHora = new Date()
 const dayName = new Array('domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado')
 
-const data = {
+const dataObject = {
+	horaCompleta: (new Date()).toLocaleTimeString(),
+	hora: (new Date()).getHours(),
+	minuto: (new Date()).getMinutes(),
+	segundo: (new Date()).getSeconds(),
 
-	hora: dataHora.getHours(),
-	minuto: dataHora.getMinutes(),
-	segundo: dataHora.getSeconds(),
+	diaDaSemana: () => (dayName[(new Date()).getDay()].toLocaleUpperCase()).slice(0, 3),
 
-	diaDaSemana: () => (dayName[dataHora.getDay()].toLocaleUpperCase()).slice(0, 3),
-
-	diaDoMes: dataHora.getDate(),
-	mes: dataHora.getMonth() + 1,
-	ano: dataHora.getFullYear(),
+	diaDoMes: (new Date()).getDate(),
+	mes: (new Date()).getMonth() + 1,
+	ano: (new Date()).getFullYear(),
 }
 
-export { data }
+export { dataObject }
