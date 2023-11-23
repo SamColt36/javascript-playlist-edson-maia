@@ -35,8 +35,9 @@
 
 				<div id="temperatura">
 					<h1 class="city"></h1>
-					<h2>🌡
-						<span id="temp"></span>°C 💧
+					<h2>
+						⬇<span id="tempMin"></span>°C 
+						⬆<span id="tempMax"></span>°C 💧
 						<span id='umidad'></span>%
 					</h2>
 				</div>
@@ -46,8 +47,10 @@
 	</main>
 	<!-- JS externo -->
 	<script src="../libs/jQuery.js"></script>
+	<script type="module" src="./scripts/api.js"></script>
 	<script type="module" src="./scripts/dom.js"></script>
-	<script type="module" src="./scripts/main.js"></script>
+	<script type="module" src="./scripts/functions.js"></script>
+	<script type="module" src="./scripts/app.js"></script>
 </body>
 
 </html>

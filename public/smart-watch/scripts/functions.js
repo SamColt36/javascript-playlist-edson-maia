@@ -1,12 +1,5 @@
-// import { dataObject } from './date.js'
-import { relogioDigital, telaSmart, relogioSmart, hSmart, mSmart, sSmart, dataSmart, semana, data, temperatura, temp, umidad } from './dom.js'
-
-(function atualizarRelogio() {
-	setInterval(() => {
-		atualizarRelogioDigital()
-		atualizarRelogioSmart()
-	}, 1000)
-})()
+import { relogioDigital, hSmart, mSmart, sSmart, semana, data, tempMax, tempMin, umidad } from './dom.js'
+import { dadosMeteorologicos } from './api.js'
 
 function atualizarRelogioDigital() {
 	return relogioDigital.text((new Date()).toLocaleTimeString('pt-BR'))
@@ -23,7 +16,16 @@ function atualizarRelogioSmart() {
 	sSmart.text(hora.getSeconds().toString().padStart(2, '0'))
 }
 
-function estilizarRelofioSmart() {
-
+function atualizarDadosMetereologicos() {
+	dadosMeteorologicos().then((data) => {
+		tempMax.text(data.day1.temperature_max)
+		tempMin.text(data.day1.temperature_min)
+		umidad.text(data.day1.humidity)
+	}).catch(error => {
+		temp.text('?')
+		umidad.text('?')
+		console.log(error.mensage)
+	})
 }
-// fetch('https://api.openweathermap.org/data/3.0/onecall?lat=-3.72294433&lon=-38.59187007&appid={a2d0a2771fbe46b9b8b4c69aa927f7e2}').then(body => body.json()).then(data => console.log(data))
+
+export { atualizarRelogioDigital, atualizarRelogioSmart, atualizarDadosMetereologicos }
