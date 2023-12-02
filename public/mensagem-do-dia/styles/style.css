@@ -140,12 +140,11 @@ textarea::placeholder {
 }
 
 .fundo1 {
-	background-image: url('../images/fundos/textura.jpg');
 	color: #663300;
 	text-shadow: 0 0 5px #fff;
 }
 
-.fundo2 {
+/* .fundo2 {
 	background-image: url('../images/fundos/madeira1.jpg');
 	color: #fff;
 }
@@ -164,7 +163,7 @@ textarea::placeholder {
 .fundo5 {
 	background-image: url('../images/fundos/bronze2.jpg');
 	color: #fff;
-}
+}  */
 
 .modal {
 	position: fixed;
