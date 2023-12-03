@@ -27,4 +27,5 @@ function clearInputs() {
 	$quoteAuthorship.text(strEmpty)
 
 }
+
 export { createQuote, getAuthorship, getQuote, clearInputs }

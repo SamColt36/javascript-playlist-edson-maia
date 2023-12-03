@@ -8,7 +8,8 @@ const generateBackground = async () => await getImages().then(data => {
 	})
 })
 
-function resetBackkground() {
-	$quoteOutput.css({'background': `url("")`})
+const resetBackkground = () => {
+	$quoteOutput.css('background', `url("")`)
 }
+
 export { generateBackground, resetBackkground }

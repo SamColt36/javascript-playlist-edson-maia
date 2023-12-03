@@ -1,6 +1,3 @@
-// Janela modal
-const $modal = $('.modal')
-const $close = $('#fechar')
 // Inputs
 const $dataInput = $('#data')
 const $quoteInput = $('#citacao')
@@ -18,4 +15,4 @@ const $quoteAuthorship = $('#citacao00 span')
 //
 const strEmpty = ''
 
-export { $modal, $close, $dataInput, $quoteInput, $authorshipInput, $btnCreate, $btnClear, $aviso, $quoteOutput, $quoteTitleOutput, $blockquoteOutput, $quoteAuthorship, strEmpty }
+export { $dataInput, $quoteInput, $authorshipInput, $btnCreate, $btnClear, $aviso, $quoteOutput, $quoteTitleOutput, $blockquoteOutput, $quoteAuthorship, strEmpty }

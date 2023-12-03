@@ -14,15 +14,6 @@
 <body>
 	<main class="tela-principal">
 
-		<!-- Janela Modal -->
-		<div id="abrirModal" class="modal">
-			<div>
-				<a href="#fechar" title="Fechar" class="fechar">x</a>
-				<h2>Aviso</h2>
-				<p>É obrigatório escolher uma data, digitar uma citação e autoria antes de postar. </p>
-			</div>
-		</div>
-
 		<section class="sectionForm">
 
 			<h1>App Mensagem do Dia</h1>
@@ -38,8 +29,7 @@
 
 				<div class='form-group'>
 					<label for="citacao">Citação</label>
-					<textarea name="citacao" id="citacao" autofocus placeholder="Digite aqui a citação"
-						required>
+					<textarea name="citacao" id="citacao" autofocus placeholder="Digite aqui a citação" required>
 					</textarea>
 				</div>
 
@@ -74,6 +64,7 @@
 	</main>
 
 	<script src="../libs/jQuery.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script type="module" src="./scripts/api.js"></script>
 	<script type="module" src="./scripts/dom.js"></script>
 	<script type="module" src="./scripts/inputs.js"></script>
