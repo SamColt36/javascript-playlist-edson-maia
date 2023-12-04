@@ -9,7 +9,7 @@ const getImages = async () => {
 		}
 
 		const requestImage = await client.photos.search({
-			query: 'lumber wallpaper',
+			query: 'background',
 			orientation: 'square',
 			size: 'medium',
 			per_page: 1,
