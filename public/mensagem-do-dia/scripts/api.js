@@ -4,10 +4,7 @@ const client = createClient('IvtJEQNWC4iFB0UrtKN5jCpbamoJjhMUvWRp28gHUn5u2IrHFEQ
 
 const getImages = async () => {
 	try {
-		const getRandomNumber = (min, max) => {
-			return Math.floor(Math.random() * (max - min + 1)) + min;
-		}
-
+		const getRandomNumber = (min, max) => (Math.floor(Math.random() * (max - min + 1)) + min)
 		const requestImage = await client.photos.search({
 			query: 'background',
 			orientation: 'square',
@@ -15,8 +12,10 @@ const getImages = async () => {
 			per_page: 1,
 			page: getRandomNumber(0, 10)
 		})
+		// URL para colocar no atributo src 
 		return requestImage.photos[0].src.medium
-	} catch (error) {
+	}
+	catch (error) {
 		console.error('Erro ao buscar fotos:', error)
 	}
 }

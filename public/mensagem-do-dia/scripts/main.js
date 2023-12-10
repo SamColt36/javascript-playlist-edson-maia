@@ -1,5 +1,5 @@
 import { generateBackground, resetBackkground } from './generateBackground.js'
-import { $dataInput, $quoteInput, $authorshipInput, $btnCreate, $quoteOutput, $btnClear, strEmpty } from './dom.js'
+import { $dataInput, $quoteInput, $authorshipInput, $btnCreate, $btnClear } from './dom.js'
 import { createQuote, getAuthorship, getQuote, clearInputs } from './inputs.js'
 
 const alertCustom = () => {
@@ -11,22 +11,37 @@ const alertCustom = () => {
 	})
 }
 
+const generateImage = async () => {
+	await generateBackground()
+	const cite = $('#citacao00')[0]
+	const canvas = await html2canvas(cite, {
+		useCORS: true,
+		logging: true,
+		allowTaint: true,
+		backgroundColor: null,
+		scale: window.devicePixelRatio
+	})
+	$(cite).empty()
+	resetBackkground()
+	cite.append(canvas)
+}
+
+
 $btnCreate.click(async function (e) {
 	const situationInputDate = $dataInput.val()
 	const situationInputQuote = $quoteInput.val()
 	const situationInputAuthorship = $authorshipInput.val()
 
-	if (situationInputDate !== strEmpty
-		&& situationInputQuote !== strEmpty
-		&& situationInputAuthorship !== strEmpty) {
+	if (situationInputDate !== false
+		&& situationInputQuote !== false
+		&& situationInputAuthorship !== false) {
 
 		createQuote()
 		getQuote()
 		getAuthorship()
-		generateBackground()
+		generateImage()
 		window.scroll(0, 750)
-	}
-	else {
+	} else {
 		alertCustom()
 	}
 	e.preventDefault()
@@ -35,5 +50,6 @@ $btnCreate.click(async function (e) {
 $btnClear.click(function (e) {
 	clearInputs()
 	resetBackkground()
+	window.scroll(0, 0)
 	e.preventDefault()
 })

@@ -1,3 +1,4 @@
+const $sectionForm = $('.sectionForm')
 // Inputs
 const $dataInput = $('#data')
 const $quoteInput = $('#citacao')
@@ -12,7 +13,5 @@ const $quoteOutput = $('#citacao00')
 const $quoteTitleOutput = $('#citacao00 h2')
 const $blockquoteOutput = $('#citacao00 blockquote')
 const $quoteAuthorship = $('#citacao00 span')
-//
-const strEmpty = ''
 
-export { $dataInput, $quoteInput, $authorshipInput, $btnCreate, $btnClear, $aviso, $quoteOutput, $quoteTitleOutput, $blockquoteOutput, $quoteAuthorship, strEmpty }
+export { $sectionForm, $dataInput, $quoteInput, $authorshipInput, $btnCreate, $btnClear, $aviso, $quoteOutput, $quoteTitleOutput, $blockquoteOutput, $quoteAuthorship }

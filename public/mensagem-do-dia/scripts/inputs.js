@@ -1,31 +1,22 @@
-import { $dataInput, $quoteInput, $authorshipInput, $quoteTitleOutput, $blockquoteOutput, $quoteAuthorship, strEmpty } from './dom.js'
+import { $dataInput, $quoteInput, $authorshipInput, $quoteTitleOutput, $blockquoteOutput, $quoteAuthorship } from './dom.js'
 
 function createQuote() {
-	const srtDate = ($dataInput.val()).replace(/-/g, '/')
+	const srtDate = $dataInput.val().replace(/-/g, '/')
 	const objData = new Date(srtDate)
 	const dateFormated = objData.toLocaleDateString('pt-BR')
 	return $quoteTitleOutput.text(dateFormated)
 }
 
 function getQuote() {
-	const mensageQuote = $quoteInput.val()
-	return $blockquoteOutput.text(mensageQuote)
+	return $blockquoteOutput.text($quoteInput.val())
 }
 
 function getAuthorship() {
-	const quoteAuthorship = $authorshipInput.val()
-	return $quoteAuthorship.text(quoteAuthorship)
+	return $quoteAuthorship.text($authorshipInput.val())
 }
 
 function clearInputs() {
-	$dataInput.val(strEmpty)
-	$quoteInput.val(strEmpty)
-	$authorshipInput.val(strEmpty)
-
-	$quoteTitleOutput.text(strEmpty)
-	$blockquoteOutput.text(strEmpty)
-	$quoteAuthorship.text(strEmpty)
-
+	$('input[type="date"], textarea, input[type = "text"]').val(false)
 }
 
 export { createQuote, getAuthorship, getQuote, clearInputs }
