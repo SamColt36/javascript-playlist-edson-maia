@@ -1,62 +1,63 @@
-import { $inputNumero, $btnChutar, $aviso, $btnSom } from './dom.js'
-import { gerarNumeroSecreto } from './numeroSecreto.js'
-import { validarNumeroDigitado } from './funcoes-auxiliares.js'
+import { $inputNumber, $buttonKick, $notice, $buttonSound } from "./dom.js";
+import { generateSecretNumber } from "./numeroSecreto.js";
+import { validateEnteredNumber } from "./funcoes-auxiliares.js";
 
-const numeroSecreto = gerarNumeroSecreto()
-const musica = new Audio('./audio/abertura-the-mentalist.mp3')
+const secretNumber = generateSecretNumber();
+const music = new Audio("./audio/abertura-the-mentalist.mp3");
 
-let count = 1
+let count = 1;
 
-function tocarMusicaDeFundo() {
-	return musica.play()
-}
+const playBackgroundMusic = () => {
+  return music.play();
+};
 
-function ativarBtnChutar() {
-	setTimeout(() => {
-		$btnChutar.removeClass('bloqueado')
-		$aviso.html('')
-		$aviso.removeClass('acertou errou')
-	}, 1000)
-}
+const activateKickButton = () => {
+  setTimeout(() => {
+    $buttonKick.removeClass("bloqueado");
+    $notice.html(false).removeClass("acertou errou");
+  }, 1000);
+};
 
-function jogar() {
-	if (($inputNumero.val()).trim() !== '') {
-		if (parseInt($inputNumero.val()) === numeroSecreto) {
-			$aviso.html(`Acertou, o número secreto é ${numeroSecreto}`)
-			$aviso.addClass('acertou')
-			$aviso.removeClass('errou')
+const trigger = () => {
+  if ($inputNumber.val().trim() !== "") {
+    if (parseInt($inputNumber.val()) === secretNumber) {
+      $notice
+        .html(`Acertou, o número secreto é ${secretNumber}`)
+        .addClass("acertou")
+        .removeClass("errou");
 
-			setTimeout(() => location.reload(), 1500)
-		} else {
-			$aviso.html('Errou. Porém, tente mais uma vez!')
-			$aviso.addClass('errou')
-			$aviso.removeClass('acertou')
-		}
-	}
-}
+      setTimeout(() => location.reload(), 1500);
+    } else {
+      $notice
+        .html("Errou. Porém, tente mais uma vez!")
+        .addClass("errou")
+        .removeClass("acertou");
+    }
+  }
+};
 
-function ativarDesativarMusica() {
-	count++
-	return (count % 2 === 0) ? musica.pause() : musica.play()
-}
+const enableOrDisableMusic = () => {
+  count++;
+  return count % 2 === 0 ? music.pause() : music.play();
+};
 
-$inputNumero.blur(function (e) {
-	validarNumeroDigitado($inputNumero.val())
-	e.preventDefault()
-})
+$inputNumber.blur(function (e) {
+  validateEnteredNumber($inputNumber.val());
+  e.preventDefault();
+});
 
-$inputNumero.click(function (e) {
-	tocarMusicaDeFundo()
-	ativarBtnChutar()
-	e.preventDefault()
-})
+$inputNumber.click(function (e) {
+  playBackgroundMusic();
+  activateKickButton();
+  e.preventDefault();
+});
 
-$btnChutar.click(function (e) {
-	jogar()
-	e.preventDefault()
-})
+$buttonKick.click(function (e) {
+  trigger();
+  e.preventDefault();
+});
 
-$btnSom.click(function (e) {
-	ativarDesativarMusica()
-	e.preventDefault()
-})
+$buttonSound.click(function (e) {
+  enableOrDisableMusic();
+  e.preventDefault();
+});

@@ -1,25 +1,25 @@
-import { getRandomInt } from "./random.js"
+import { getRandomInt } from "./random.js";
 
-let numeroRamdomico
-const music = new Audio('./audio/dado-rolando.mp3')
+let randomNumber;
+const music = new Audio("./audio/dado-rolando.mp3");
 
-$('#btnSortear').click(e => {
-	music.play()
-	numeroRamdomico = getRandomInt(1, 6)
+$("#btnSortear").click((e) => {
+  music.play();
+  randomNumber = getRandomInt(1, 6);
 
-	$('#imgDado').addClass('animar')
-	$('#sorteado').addClass('aparecer')
-	$('#btnSortear').css('display', 'none')
+  $("#imgDado").addClass("animar");
+  $("#sorteado").addClass("aparecer");
+  $("#btnSortear").css("display", "none");
 
-	setTimeout(() => {
-		$('#sorteado').html(numeroRamdomico)
-		$('#imgDado').attr('src', `./images/${numeroRamdomico}.png`)
+  setTimeout(() => {
+    $("#sorteado").html(randomNumber);
+    $("#imgDado").attr("src", `./images/${randomNumber}.png`);
 
-		$('#btnSortear').css('display', 'inline-block')
+    $("#btnSortear").css("display", "inline-block");
 
-		$('#imgDado').removeClass('animar')
-		$('#sorteado').removeClass('aparecer')
-	}, 1500)
+    $("#imgDado").removeClass("animar");
+    $("#sorteado").removeClass("aparecer");
+  }, 1500);
 
-	e.preventDefault()
-})
+  e.preventDefault();
+});

@@ -1,24 +1,29 @@
-import { conteudos } from './dom.js'
+import { conteudos } from "./dom.js";
 
-function inserirCardLutadores(object) {
-	for (let index = 0; index < (object.lutadores).length; index++) {
-		const elem = object.lutadores[index]
-		const card = `<article class='card'>
-				<img id='foto' class='foto' src="./images/pride/${elem.foto}" alt="Foto de ${elem.name}." />
-				<h2 id='nome' class='nome'>${elem.nome}</h2>
-				<h3 id='nacionalidade' class='nacionalidade'>${elem.nacionalidade}</h3>
-				<h3 id='idade' class='idade'>${elem.idade} anos</h3>
-				<h3 id='peso' class='peso'>${elem.peso} Kg</h3>
-				<h3 id='altura' class='altura'>${elem.altura} m</h3>
-			</article>`
-		conteudos.append(card)
-	}
-	removerTemplateCard()
+const createCards = (obj) => {
+  $.ajax({
+    url: "../../../public/card/fragments/article.html",
+  }).done((data) => {
+    obj.lutadores
+      .map((item) => {
+        const htmlGenerated = data
+          .replace(/{foto}/g, item.foto)
+          .replace(/{nome}/g, item.nome)
+          .replace(/{nacionalidade}/g, item.nacionalidade)
+          .replace(/{idade}/g, item.idade)
+          .replace(/{peso}/g, item.peso)
+          .replace(/{altura}/g, item.altura);
+
+        conteudos.append(htmlGenerated);
+      })
+      .join("");
+  });
+  removeDefaultCard();
+};
+
+function removeDefaultCard() {
+  const templateCard = $(".card:first");
+  return templateCard.remove();
 }
 
-function removerTemplateCard() {
-	const templateCard = $('.card:first')
-	return templateCard.remove()
-}
-
-export { inserirCardLutadores }
+export { createCards };

@@ -1,6 +1,6 @@
-const $inputNumero = $('#inputNumero')
-const $btnChutar = $('#btnChutar')
-const $aviso = $('#aviso')
-const $btnSom = $('#btnSom')
+const $inputNumber = $("#inputNumero");
+const $buttonKick = $("#btnChutar");
+const $notice = $("#aviso");
+const $buttonSound = $("#btnSom");
 
-export {$inputNumero, $btnChutar, $aviso, $btnSom}
+export { $inputNumber, $buttonKick, $notice, $buttonSound };

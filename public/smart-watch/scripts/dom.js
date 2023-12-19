@@ -1,15 +1,25 @@
-const relogioDigital = $('#relogioDigital')
+const digitalWatch = $("#relogioDigital");
 
-const hSmart = $('#hSmart')
-const mSmart = $('#mSmart')
-const sSmart = $('#sSmart')
+const hSmart = $("#hSmart");
+const mSmart = $("#mSmart");
+const sSmart = $("#sSmart");
 
-const semana = $('#semana')
-const data = $('#data')
+const week = $("#semana");
+const date = $("#data");
 
-const tempMax = $('#tempMax')
-const tempMin = $('#tempMin')
+const tempMax = $("#tempMax");
+const tempMin = $("#tempMin");
 
-const umidad = $('#umidad')
+const moisture = $("#umidad");
 
-export { relogioDigital, hSmart, mSmart, sSmart, semana, data, tempMax, tempMin, umidad }
+export {
+  digitalWatch,
+  hSmart,
+  mSmart,
+  sSmart,
+  week,
+  date,
+  tempMax,
+  tempMin,
+  moisture,
+};

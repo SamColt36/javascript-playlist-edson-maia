@@ -1,6 +1,3 @@
-const conteudos = $('.conteudos')
+const conteudos = $(".conteudos");
 
-export { conteudos }
-
-
-
+export { conteudos };

@@ -1,11 +1,15 @@
-import { atualizarRelogioDigital, atualizarRelogioSmart, atualizarDadosMetereologicos } from './functions.js'
+import {
+  updateDigitalClock,
+  updateSmartWatch,
+  updateMeteorologicalData,
+} from "./functions.js";
 
-function atualizarRelogio() {
-	setInterval(() => {
-		atualizarRelogioDigital()
-		atualizarRelogioSmart()
-	}, 1000)
-	atualizarDadosMetereologicos()
-}
+const updateClock = () => {
+  setInterval(() => {
+    updateDigitalClock();
+    updateSmartWatch();
+  }, 1000);
+  updateMeteorologicalData();
+};
 
-atualizarRelogio()
+updateClock();

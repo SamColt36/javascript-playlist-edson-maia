@@ -1,12 +1,20 @@
-const $btnZerar = $('#btnZerar')
+const $resetButton = $("#btnZerar");
 
-const $mostradorCelsios = $('#numeroC')
-const $radioCelsios = $('#celsius')
+const $celsiusDisplay = $("#numeroC");
+const $radioCelsios = $("#celsius");
 
-const $mostradorFahrenheit = $('#numeroF')
-const $radioFahrenheit = $('#fahrenheit')
+const $fahrenheitDisplay = $("#numeroF");
+const $radioFahrenheit = $("#fahrenheit");
 
-const $mostradorKelvin = $('#numeroK')
-const $radioKelvin = $('#kelvin')
+const $kelvinDisplay = $("#numeroK");
+const $radioKelvin = $("#kelvin");
 
-export { $btnZerar, $mostradorCelsios, $mostradorFahrenheit, $mostradorKelvin, $radioCelsios, $radioFahrenheit, $radioKelvin}
+export {
+  $resetButton,
+  $celsiusDisplay,
+  $fahrenheitDisplay,
+  $kelvinDisplay,
+  $radioCelsios,
+  $radioFahrenheit,
+  $radioKelvin,
+};

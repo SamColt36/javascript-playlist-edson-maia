@@ -1,19 +1,17 @@
-import { valorEmReal, moedaSelecionada, btnConverter } from './dom.js'
+import { valueInReal, selectedCurrency, buttonConvert } from "./dom.js";
 
-function desativarBotao() {
-	$(btnConverter).removeClass('ativado')
-	$(btnConverter).prop('disabled', true)
-}
+const disableButton = () => {
+  $(buttonConvert).removeClass("ativado").prop("disabled", true);
+};
 
-function ativarBotao() {
-	if (validarInputRadio() === true && valorEmReal.value !== '') {
-		$(btnConverter).addClass('ativado')
-		$(btnConverter).prop('disabled', false)
-	} else desativarBotao()
-}
+const activateButton = () => {
+  if (validateInputRadio() === true && valueInReal.value !== "") {
+    $(buttonConvert).addClass("ativado").prop("disabled", false);
+  } else disableButton();
+};
 
-function validarInputRadio() {
-	return Array.from(moedaSelecionada).some(e => e.checked)
-}
+const validateInputRadio = () => {
+  return Array.from(selectedCurrency).some((e) => e.checked);
+};
 
-export { desativarBotao, ativarBotao, validarInputRadio }
+export { disableButton, activateButton, validateInputRadio };

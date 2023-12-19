@@ -1,34 +1,49 @@
-import { valorEmReal, moedaSelecionada, aviso, btnConverter, btnLimpar } from './dom.js'
-import { ativarBotao, desativarBotao } from './form.js'
-import { converterMoeda, simboloMonetario } from "./moeda.js";
+import {
+  valueInReal,
+  selectedCurrency,
+  notice,
+  buttonConvert,
+  buttonClear,
+} from "./dom.js";
+import { disableButton, activateButton } from "./form.js";
+import { convertCurrency, symbol } from "./moeda.js";
 
-moedaSelecionada.forEach(input => input.addEventListener("input", (e) => {
-	ativarBotao()
-	e.preventDefault()
-}))
+selectedCurrency.forEach((input) =>
+  input.addEventListener("input", (e) => {
+    activateButton();
+    e.preventDefault();
+  })
+);
 
-valorEmReal.addEventListener("input", (e) => {
-	ativarBotao()
-	e.preventDefault()
-})
+valueInReal.addEventListener("input", (e) => {
+  activateButton();
+  e.preventDefault();
+});
 
-$(btnConverter).click((e) => {
-	Array.from(moedaSelecionada).some(e => {
-		if (e.checked) converterMoeda(e.value, valorEmReal.value)
-			.then(response => {
-				const real = Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(valorEmReal.value)
-				$(aviso).html(`O valor ${real} convertido em ${e.value} é ${simboloMonetario(e.value)} ${response.toFixed(2)}`)
-			})
-	})
-	e.preventDefault()
-})
+$(buttonConvert).click((e) => {
+  Array.from(selectedCurrency).some((e) => {
+    if (e.checked)
+      convertCurrency(e.value, valueInReal.value).then((response) => {
+        const real = Intl.NumberFormat("pt-br", {
+          style: "currency",
+          currency: "BRL",
+        }).format(valueInReal.value);
+        $(notice).html(
+          `O valor ${real} convertido em ${e.value} é ${symbol(
+            e.value
+          )} ${response.toFixed(2)}`
+        );
+      });
+  });
+  e.preventDefault();
+});
 
-$(btnLimpar).click((e) => {
-	desativarBotao()
-	valorEmReal.focus()
-	$(valorEmReal).prop('value', null)
-	$('input[name="moedaEstrangeira"]').prop('checked', false)
-	$(aviso).html('Digite o valor, escolha a moeda e converter')
-	console.clear()
-	e.preventDefault()
-})
+$(buttonClear).click((e) => {
+  disableButton();
+  valueInReal.focus();
+  $(valueInReal).prop("value", null);
+  $('input[name="moedaEstrangeira"]').prop("checked", false);
+  $(notice).html("Digite o valor, escolha a moeda e converter");
+  console.clear();
+  e.preventDefault();
+});
